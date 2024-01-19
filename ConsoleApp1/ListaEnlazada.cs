@@ -65,5 +65,37 @@ namespace ConsoleApp1
         
         
         }
+
+
+        public void RevertirListaEnlaza()
+        {
+            Nodo nodo_Anterio = null;
+
+            Nodo nodoActual = Cabeza;
+
+            while (nodoActual != null) {
+
+                if (nodoActual.anterior != null) {
+
+                    nodo_Anterio = nodoActual.anterior;
+                    nodoActual.anterior = nodoActual.siguiente;
+                    nodoActual.siguiente = nodo_Anterio;
+                
+                
+                
+                
+                }
+
+                nodoActual= nodoActual.siguiente;
+            
+            
+            }
+
+            
+        }
+        
+        
+        
+        }
     }
-}
+
