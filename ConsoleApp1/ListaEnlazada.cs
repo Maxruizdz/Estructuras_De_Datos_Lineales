@@ -98,12 +98,12 @@ namespace ConsoleApp1
                     nodo_Anterio = nodoActual.anterior;
                     nodoActual.anterior = nodoActual.siguiente;
                     nodoActual.siguiente = nodo_Anterio;
-}
+                }
 
                 nodoActual = nodoActual.siguiente;
 
 
-            } 
+            }
 
 
         }
@@ -134,13 +134,42 @@ namespace ConsoleApp1
             }
 
             cabeza_par.siguiente = null;
-            cabeza_impar.siguiente = primer_nodo_par.siguiente; 
-            Cabeza = primer_nodo_impar.siguiente; 
+            cabeza_impar.siguiente = primer_nodo_par.siguiente;
+            Cabeza = primer_nodo_impar.siguiente;
 
 
 
         }
 
+
+        public bool Linked_List_Cyrcle() {
+            Nodo nodo_actual = Cabeza;
+            Nodo nodo_siguiente = Cabeza.siguiente;
+
+            while(nodo_actual is not null && nodo_siguiente is not null)
+            {
+                if (nodo_actual == nodo_siguiente) {
+                    return true;
+                
+                }
+
+                nodo_actual = nodo_actual.siguiente;
+                nodo_siguiente = nodo_siguiente.siguiente.siguiente;
+
+
+
+            }
+            return false;
+
+
+
+        }
     }
+
+
     }
+
+
+
+    
 
